@@ -19,7 +19,10 @@ const UserSchema = new Schema({
     required: true,
   },
   phone: Number,
-  role: String
+  role:  {
+    type: String,
+    required: true,
+  }
 });
 
 // export to the database model

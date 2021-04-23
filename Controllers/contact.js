@@ -16,7 +16,7 @@ const addcontact =  async (req, res) => {
 };
 const getcontacts = async (req, res) => {
     try {
-      const ListeOfContact= await Fournisseur.find();
+      const ListeOfContact= await Contact.find();
       res.send({ msg: "ce sont les contacts", ListeOfContact });
     } catch (error) {
       res.send({ msg: "contacts introuvables" });
