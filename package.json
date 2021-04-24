@@ -4,10 +4,13 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "start":"node server.js",
     "back": "nodemon server",
-    "front": "cd mon-app && npm start",
+    "front": "cd Client && npm start",
     "dev": "concurrently \"npm run back\" \"npm run front\"",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix mon-app && npm run build --prefix mon-app"
+"build":"cd Client && npm run build",
+"install-client":"cd Client && npm install",
+"heruko-postbuild":"npm run install-client && npm run build "
   },
   "author": "",
   "license": "ISC",

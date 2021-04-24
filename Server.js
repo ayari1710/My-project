@@ -2,7 +2,7 @@
 const express = require("express");
 require("dotenv").config();
 const connectDB = require("./config/connectDB");
-const path=require('path');
+const path = require("path");
 // instance app
 const app = express();
 // connection db
@@ -16,13 +16,9 @@ app.use("/api/fournisseur", require("./Router/fournisseur"));
 app.use("/api/historique", require("./Router/history"));
 app.use("/api/contact", require("./Router/contact"));
 
-// serve static assets if in production 
-if(process.env.NODE_ENV==='production'){
-  // set static folder
-  app.use(express.static('mon-app/build'));
-  app.get('*',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'mon-app','build','index.html'))
-  })
+// serve static assets if in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("Client/build"));
 }
 
 // Port
